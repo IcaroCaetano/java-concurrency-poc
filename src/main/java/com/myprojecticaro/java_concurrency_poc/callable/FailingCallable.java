@@ -6,6 +6,7 @@ public class FailingCallable implements Callable<String> {
 
     @Override
     public String call() {
+
         throw new IllegalStateException("Something went wrong");
     }
 }

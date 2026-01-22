@@ -1,11 +1,13 @@
 package com.myprojecticaro.java_concurrency_poc;
 
 import com.myprojecticaro.java_concurrency_poc.callable.DelayedCallable;
+import com.myprojecticaro.java_concurrency_poc.callable.FailingCallable;
 import com.myprojecticaro.java_concurrency_poc.callable.SimpleMessageCallable;
 import com.myprojecticaro.java_concurrency_poc.callable.SumCallable;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
@@ -49,6 +51,22 @@ public class JavaConcurrencyPocApplication {
 
 			System.out.println("DelayedCallable result:");
 			System.out.println(delayedFuture.get());
+			System.out.println();
+
+			/*
+			 * 4. FailingCallable
+			 * Exceção capturada via ExecutionException
+			 */
+			Future<String> failingFuture =
+					executor.submit(new FailingCallable());
+
+			System.out.println("FailingCallable result:");
+			try {
+				System.out.println(failingFuture.get());
+			} catch (ExecutionException e) {
+				System.out.println("Exception FailingCallable from callable:");
+				System.out.println(e.getCause().getMessage());
+			}
 			System.out.println();
 
 		} catch (InterruptedException e) {
