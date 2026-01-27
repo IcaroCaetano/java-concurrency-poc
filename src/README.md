@@ -18,7 +18,7 @@ The examples are intentionally simple and written for study purposes, closely re
 
 ### Callable
 
-####What is Callable?
+#### What is Callable?
 
 Callable<V> represents a task that:
 
@@ -27,3 +27,15 @@ Callable<V> represents a task that:
 - Returns a value
 
 - Can throw checked or unchecked exceptions
+
+````java
+V call() throws Exception;
+````
+
+Callable is conceptually similar to Runnable, but with two important differences:
+
+- It returns a result
+
+- It supports exception propagation
+
+Because of this, Callable is preferred whenever the result of a task matters.
