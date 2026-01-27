@@ -39,3 +39,25 @@ Callable is conceptually similar to Runnable, but with two important differences
 - It supports exception propagation
 
 Because of this, Callable is preferred whenever the result of a task matters.
+
+
+### Future
+
+#### What is Future?
+
+Future<V> represents the result of an asynchronous computation. It acts as a handle that allows the caller to:
+
+- Retrieve the result of a task
+
+- Check if the task has completed
+
+- Cancel the task
+
+- Handle execution failures
+
+The most common operation is get(), which blocks until the result is available.
+
+````java
+V result = future.get();
+````
+If the Callable throws an exception, it is wrapped inside an ExecutionException and rethrown by get().
