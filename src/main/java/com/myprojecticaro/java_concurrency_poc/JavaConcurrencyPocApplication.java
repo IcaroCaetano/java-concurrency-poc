@@ -89,7 +89,18 @@ public class JavaConcurrencyPocApplication {
             System.out.println("CounterCallable results:");
             System.out.println(counterFuture1.get());
             System.out.println(counterFuture2.get());
-            System.out.println();
+            System.out.println("------------------------------------------------");
+
+			/*
+             * 7. UppercaseCallable
+             * Transformação de dados
+             */
+            Future<String> uppercaseFuture = executor.submit(new UppercaseCallable("callable example"));
+
+            System.out.println("UppercaseCallable result:");
+            System.out.println(uppercaseFuture.get());
+            System.out.println()
+			
 
 		} catch (InterruptedException e) {
 			Thread.currentThread().interrupt();
