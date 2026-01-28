@@ -102,6 +102,10 @@ public class JavaConcurrencyPocApplication {
             System.out.println()
 
 
+			/*
+             * 8. CancellableCallable
+             * Transformação de dados
+             */
 			Future<String> cancelFuture = executor.submit(new CancellableCallable());
 		
 			Thread.sleep(1200);
