@@ -128,14 +128,3 @@ This requires explicit handling when calling future.get().
 
 5. Shared state and thread safety
 
-Possible Next Steps
-
-After mastering Callable and Future, the natural progression is:
-
-- Timeouts and cancellation with Future
-
-- Advanced ExecutorService configurations
-
-- CompletableFuture for non-blocking pipelines
-
-- Comparison between blocking and reactive approaches
