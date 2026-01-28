@@ -100,7 +100,19 @@ public class JavaConcurrencyPocApplication {
             System.out.println("UppercaseCallable result:");
             System.out.println(uppercaseFuture.get());
             System.out.println()
-			
+
+
+			Future<String> cancelFuture = executor.submit(new CancellableCallable());
+		
+			Thread.sleep(1200);
+		
+			System.out.println("Requesting task cancellation");
+			boolean cancelled = cancelFuture.cancel(true);
+	
+	        System.out.println("Cancel result: " + cancelled);
+	        System.out.println("Is cancelled: " + future.isCancelled());
+	        System.out.println("Is done: " + future.isDone());
+		
 
 		} catch (InterruptedException e) {
 			Thread.currentThread().interrupt();
