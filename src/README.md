@@ -61,3 +61,81 @@ The most common operation is get(), which blocks until the result is available.
 V result = future.get();
 ````
 If the Callable throws an exception, it is wrapped inside an ExecutionException and rethrown by get().
+
+### ExecutorService
+
+Callable tasks are not executed directly. Instead, they are submitted to an ExecutorService, which manages thread creation, reuse, and scheduling.
+
+````java
+ExecutorService executor = Executors.newFixedThreadPool(2);
+Future<String> future = executor.submit(callable);
+````
+Using ExecutorService avoids manual thread management and is the recommended approach in production systems.
+
+### Examples Included in This POC
+
+This POC includes several Callable implementations, each designed to demonstrate a specific concept:
+
+- Simple Callable returning a value
+
+- Callable with constructor parameters
+
+- Callable simulating delayed execution
+
+- Callable that throws an exception
+
+- Callable wrapping a Supplier
+
+- Callable with shared state using AtomicInteger
+
+- Callable performing data transformation
+
+Each example is executed and tested in the main application class using Future.
+
+### Exception Handling
+
+Exceptions thrown inside a Callable do not propagate directly. Instead:
+
+- The Callable throws the exception
+
+- The ExecutorService captures it
+
+- The Future rethrows it wrapped in an ExecutionException
+
+This requires explicit handling when calling future.get().
+
+#### Key Concepts Demonstrated
+
+- Asynchronous task execution
+
+- Blocking vs non-blocking behavior
+
+- Safe state sharing between threads
+
+- Separation of task definition and execution
+
+- Proper shutdown of ExecutorService
+
+#### Recommended Study Order
+
+1. Callable vs Runnable
+
+2. ExecutorService basics
+
+3. Future.get() and blocking behavior
+
+4. Exception handling with ExecutionException
+
+5. Shared state and thread safety
+
+Possible Next Steps
+
+After mastering Callable and Future, the natural progression is:
+
+- Timeouts and cancellation with Future
+
+- Advanced ExecutorService configurations
+
+- CompletableFuture for non-blocking pipelines
+
+- Comparison between blocking and reactive approaches
