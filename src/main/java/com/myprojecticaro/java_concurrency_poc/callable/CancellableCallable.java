@@ -1,4 +1,4 @@
-package com.example.concurrency.callable;
+package com.myprojecticaro.java_concurrency_poc.callable;
 
 import java.util.concurrent.Callable;
 
