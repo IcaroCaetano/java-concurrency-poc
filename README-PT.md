@@ -30,7 +30,8 @@ Callable<V> representa uma tarefa que:
 
 ````java
 
-V call() throws Exception; ````
+V call() throws Exception;
+````
 
 O Callable é conceitualmente semelhante ao Runnable, mas com duas diferenças importantes:
 
@@ -59,8 +60,9 @@ A operação mais comum é get(), que bloqueia até que o resultado esteja dispo
 ```java
 
 V result = future.get();
+````
 
-```` Se o Callable lançar uma exceção, ela será encapsulada em uma ExecutionException e relançada por get().
+Se o Callable lançar uma exceção, ela será encapsulada em uma ExecutionException e relançada por get().
 
 ### ExecutorService
 
@@ -70,7 +72,6 @@ As tarefas do Callable não são executadas diretamente. Em vez disso, elas são
 ExecutorService executor = Executors.newFixedThreadPool(2);
 
 Future<String> future = executor.submit(callable);
-
 ```
 O uso do ExecutorService evita o gerenciamento manual de threads e é a abordagem recomendada em sistemas de produção.
 
