@@ -104,7 +104,7 @@ public class JavaConcurrencyPocApplication {
 
 			/*
              * 8. CancellableCallable
-             * Transformação de dados
+             * 
              */
 			Future<String> cancelFuture = executor.submit(new CancellableCallable());
 		
@@ -116,7 +116,29 @@ public class JavaConcurrencyPocApplication {
 	        System.out.println("Cancel result: " + cancelled);
 	        System.out.println("Is cancelled: " + future.isCancelled());
 	        System.out.println("Is done: " + future.isDone());
-		
+
+
+			/*
+             * 9. SlowCallable
+             * 
+             */
+			Future<String> future = executor.submit(new SlowCallable());
+	
+	        System.out.println("After submit");
+	        printState(future);
+	
+	        Thread.sleep(500);
+	
+	        System.out.println("While executing");
+	        printState(future);
+	
+	        Thread.sleep(2000);
+	
+	        System.out.println("After completion");
+	        printState(future);
+	
+	        System.out.println("Result: " + future.get());
+			
 
 		} catch (InterruptedException e) {
 			Thread.currentThread().interrupt();
