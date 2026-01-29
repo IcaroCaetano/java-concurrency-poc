@@ -3,6 +3,13 @@ package com.myprojecticaro.java_concurrency_poc.executor;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
+
+/**
+ * Objetivo:
+ *  - Limite de concorrência
+ *  - Reaproveitamento de threads
+ *  - Execução em fila
+ */
 public class FixedThreadPoolExample {
 
     public static void run() {
