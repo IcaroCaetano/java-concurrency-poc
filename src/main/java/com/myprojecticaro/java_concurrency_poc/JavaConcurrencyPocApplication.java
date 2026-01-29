@@ -84,6 +84,8 @@ public class JavaConcurrencyPocApplication {
              * 6. CounterCallable
              * Estado compartilhado com AtomicInteger
              */
+			System.out.println("********************************************************************");
+			System.out.println("Inicia CounterCallable");
             AtomicInteger counter = new AtomicInteger(0);
 
             Future<Integer> counterFuture1 =
@@ -96,16 +98,22 @@ public class JavaConcurrencyPocApplication {
             System.out.println(counterFuture1.get());
             System.out.println(counterFuture2.get());
             System.out.println();
-
+			System.out.println("Finaliza CounterCallable");
+			System.out.println("********************************************************************");
             /*
              * 7. UppercaseCallable
              * Transformação de dados
              */
+			System.out.println("********************************************************************");
+			System.out.println("Inicia UppercaseCallable");
             Future<String> uppercaseFuture = executor.submit(new UppercaseCallable("callable example"));
 
             System.out.println("UppercaseCallable result:");
             System.out.println(uppercaseFuture.get());
             System.out.println();
+
+			System.out.println("Finaliza uppercaseFuture");
+			System.out.println("********************************************************************");
 
             /*
              * 8. CancellableCallable
