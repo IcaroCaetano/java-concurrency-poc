@@ -111,8 +111,11 @@ public class JavaConcurrencyPocApplication {
              * 8. CancellableCallable
              * Cancelamento de task
              */
-            Future<String> cancelFuture =
-                    executor.submit(new CancellableCallable());
+
+			System.out.println("********************************************************************");
+			System.out.println("Inicia cancelFuture");
+
+            Future<String> cancelFuture = executor.submit(new CancellableCallable());
 
             Thread.sleep(1200);
 
@@ -124,10 +127,17 @@ public class JavaConcurrencyPocApplication {
             System.out.println("Is done: " + cancelFuture.isDone());
             System.out.println();
 
+			System.out.println("Finaliza cancelFuture");
+			System.out.println("********************************************************************");
+
             /*
              * 9. SlowCallable
              * Observação do estado do Future
              */
+
+			System.out.println("********************************************************************");
+			System.out.println("Inicia slowFuture");
+
             Future<String> slowFuture = executor.submit(new SlowCallable());
 
             System.out.println("After submit");
@@ -144,6 +154,10 @@ public class JavaConcurrencyPocApplication {
             printState(slowFuture);
 
             System.out.println("Result: " + slowFuture.get());
+
+			System.out.println("Finaliza slowFuture");
+			System.out.println("********************************************************************");
+
 
         } catch (InterruptedException e) {
             Thread.currentThread().interrupt();
