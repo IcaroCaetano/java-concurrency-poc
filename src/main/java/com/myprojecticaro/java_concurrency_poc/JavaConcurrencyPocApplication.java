@@ -34,22 +34,28 @@ public class JavaConcurrencyPocApplication {
              * 2. SumCallable
              * Callable com estado
              */
+			System.out.println("********************************************************************");
+			System.out.println("Inicia SumCallable");
             Future<Integer> sumFuture = executor.submit(new SumCallable(10, 20));
 
             System.out.println("SumCallable result:");
             System.out.println(sumFuture.get());
             System.out.println();
-
+			System.out.println("Finaliza SumCallable");
+			System.out.println("********************************************************************");
             /*
              * 3. DelayedCallable
              * Simula processamento demorado
              */
+			System.out.println("********************************************************************");
+			System.out.println("Inicia DelayedCallable");
             Future<String> delayedFuture = executor.submit(new DelayedCallable(1000));
 
             System.out.println("DelayedCallable result:");
             System.out.println(delayedFuture.get());
             System.out.println();
-
+			System.out.println("Finaliza DelayedCallable");
+			System.out.println("********************************************************************");
             /*
              * 4. FailingCallable
              * Exceção capturada via ExecutionException
