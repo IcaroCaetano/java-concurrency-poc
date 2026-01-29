@@ -34,8 +34,7 @@ public class JavaConcurrencyPocApplication {
              * 2. SumCallable
              * Callable com estado
              */
-            Future<Integer> sumFuture =
-                    executor.submit(new SumCallable(10, 20));
+            Future<Integer> sumFuture = executor.submit(new SumCallable(10, 20));
 
             System.out.println("SumCallable result:");
             System.out.println(sumFuture.get());
@@ -103,8 +102,7 @@ public class JavaConcurrencyPocApplication {
              * 7. UppercaseCallable
              * Transformação de dados
              */
-            Future<String> uppercaseFuture =
-                    executor.submit(new UppercaseCallable("callable example"));
+            Future<String> uppercaseFuture = executor.submit(new UppercaseCallable("callable example"));
 
             System.out.println("UppercaseCallable result:");
             System.out.println(uppercaseFuture.get());
@@ -131,8 +129,7 @@ public class JavaConcurrencyPocApplication {
              * 9. SlowCallable
              * Observação do estado do Future
              */
-            Future<String> slowFuture =
-                    executor.submit(new SlowCallable());
+            Future<String> slowFuture = executor.submit(new SlowCallable());
 
             System.out.println("After submit");
             printState(slowFuture);
