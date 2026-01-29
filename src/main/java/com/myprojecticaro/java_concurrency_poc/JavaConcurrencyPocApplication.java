@@ -44,8 +44,7 @@ public class JavaConcurrencyPocApplication {
              * 3. DelayedCallable
              * Simula processamento demorado
              */
-            Future<String> delayedFuture =
-                    executor.submit(new DelayedCallable(1000));
+            Future<String> delayedFuture = executor.submit(new DelayedCallable(1000));
 
             System.out.println("DelayedCallable result:");
             System.out.println(delayedFuture.get());
