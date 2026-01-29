@@ -24,14 +24,14 @@ public class JavaConcurrencyPocApplication {
              * Teste simples de Callable
              */
 			System.out.println("********************************************************************");
-			System.out.println("Inicia SumCallable");
+			System.out.println("Inicia SimpleMessageCallable");
             Future<String> messageFuture =
                     executor.submit(new SimpleMessageCallable());
 
             System.out.println("SimpleMessageCallable result:");
             System.out.println(messageFuture.get());
             System.out.println();
-			System.out.println("Finaliza SumCallable");
+			System.out.println("Finaliza SimpleMessageCallable");
 			System.out.println("********************************************************************");
             /*
              * 2. SumCallable
