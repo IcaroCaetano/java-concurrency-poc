@@ -14,6 +14,7 @@ public class FixedThreadPoolExample {
 
     public static void run() {
 
+        System.out.println("Iniciando com FixedThreadPoolExample");
         ExecutorService executor = Executors.newFixedThreadPool(2);
 
         // Executa 5 tarefas com 2 threads em fila compartilhadas no no pool
@@ -28,5 +29,9 @@ public class FixedThreadPoolExample {
         }
 
         executor.shutdown();
+
+        System.out.println("Finaliza FixedThreadPoolExample");
+        System.out.println("********************************************************************");
+        System.out.println();
     }
 }

@@ -14,6 +14,8 @@ public class SingleThreadExecutorExample {
 
     public static void run() {
 
+        System.out.println("Iniciando com SingleThreadExecutorExample");
+
         ExecutorService executor = Executors.newSingleThreadExecutor();
 
         executor.execute(() -> System.out.println("First task"));
@@ -21,5 +23,9 @@ public class SingleThreadExecutorExample {
         executor.execute(() -> System.out.println("Third task"));
 
         executor.shutdown();
+
+        System.out.println("Finaliza SingleThreadExecutorExample");
+        System.out.println("********************************************************************");
+        System.out.println();
     }
 }

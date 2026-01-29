@@ -1,6 +1,9 @@
 package com.myprojecticaro.java_concurrency_poc;
 
 import com.myprojecticaro.java_concurrency_poc.callable.*;
+import com.myprojecticaro.java_concurrency_poc.executor.FixedThreadPoolExample;
+import com.myprojecticaro.java_concurrency_poc.executor.SimpleExecutorExample;
+import com.myprojecticaro.java_concurrency_poc.executor.SingleThreadExecutorExample;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import java.util.concurrent.ExecutionException;
@@ -15,6 +18,7 @@ public class JavaConcurrencyPocApplication {
 
     public static void main(String[] args) {
 
+        // fixando duas threads
         ExecutorService executor = Executors.newFixedThreadPool(2);
 
         try {
@@ -190,6 +194,15 @@ public class JavaConcurrencyPocApplication {
         } finally {
             executor.shutdown();
         }
+
+        // Simple Executor
+        SimpleExecutorExample.run();
+
+        // Fixed Thread Pool
+        FixedThreadPoolExample.run();
+
+        // Single Thread Executor
+        SingleThreadExecutorExample.run();
     }
 
     private static void printState(Future<?> future) {

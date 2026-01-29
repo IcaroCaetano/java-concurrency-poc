@@ -14,6 +14,8 @@ public class SimpleExecutorExample {
 
     public static void run() {
 
+        System.out.println();
+        System.out.println("Iniciando com SimpleExecutorExample");
         ExecutorService executor = Executors.newSingleThreadExecutor();
 
         executor.execute(() -> {
@@ -21,5 +23,9 @@ public class SimpleExecutorExample {
         });
 
         executor.shutdown();
+
+        System.out.println("Finaliza SimpleExecutorExample");
+        System.out.println("********************************************************************");
+        System.out.println();
     }
 }
