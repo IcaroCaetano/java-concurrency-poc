@@ -19,6 +19,44 @@ The examples are intentionally simple and written for study purposes, closely re
 
 - Work with state and shared data safely
 
+
+## Structure - Where the thread pool lives
+
+Pool Threads
+
+Each pool thread:
+
+- Is an operating system thread
+
+- Created within the JVM process
+
+- Has:
+
+    - Its own stack (native memory)
+
+    - Internal metadata
+
+This stack is not located on the heap, but it counts towards the total memory consumption of the process.
+
+````
+
+JVM Process
+│
+├── Heap
+│   ├── ThreadPoolExecutor
+│   ├── BlockingQueue
+│   ├── Runnable / Callable
+│
+├── Metaspace
+│   ├── Loaded classes
+│
+├── Native memory
+│   ├── Stack Thread 1
+│   ├── Stack Thread 2
+│   ├── Stack Thread 3
+│   └── Stack Thread 4
+````
+
 ### Callable
 
 #### What is Callable?
