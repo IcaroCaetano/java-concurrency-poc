@@ -8,11 +8,13 @@ public class ExecutorShutdownExample {
 
     public static void run() {
 
+        System.out.println("Iniciando com ExecutorShutdownExample");
+
         ExecutorService executor = Executors.newFixedThreadPool(2);
 
         executor.execute(() -> {
             try {
-                Thread.sleep(2000);
+                Thread.sleep(5000);
                 System.out.println("Task finished");
             } catch (InterruptedException e) {
                 Thread.currentThread().interrupt();
@@ -32,5 +34,9 @@ public class ExecutorShutdownExample {
             executor.shutdownNow();
             Thread.currentThread().interrupt();
         }
+
+        System.out.println("Finaliza ExecutorShutdownExample");
+        System.out.println("********************************************************************");
+        System.out.println();
     }
 }

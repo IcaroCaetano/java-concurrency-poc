@@ -1,10 +1,7 @@
 package com.myprojecticaro.java_concurrency_poc;
 
 import com.myprojecticaro.java_concurrency_poc.callable.*;
-import com.myprojecticaro.java_concurrency_poc.executor.CachedThreadPoolExample;
-import com.myprojecticaro.java_concurrency_poc.executor.FixedThreadPoolExample;
-import com.myprojecticaro.java_concurrency_poc.executor.SimpleExecutorExample;
-import com.myprojecticaro.java_concurrency_poc.executor.SingleThreadExecutorExample;
+import com.myprojecticaro.java_concurrency_poc.executor.*;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import java.util.concurrent.ExecutionException;
@@ -207,6 +204,9 @@ public class JavaConcurrencyPocApplication {
 
         // Cached Thread Executor
         CachedThreadPoolExample.run();
+
+        // Shutdown Thread Executor
+        ExecutorShutdownExample.run();
     }
 
     private static void printState(Future<?> future) {
