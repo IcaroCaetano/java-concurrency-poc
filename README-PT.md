@@ -1,5 +1,7 @@
 # Prova de Conceito de Concorrência em Java
 
+![Image_Java_util_concurent.png](image/Image_Java_util_concurent.png)
+
 Este repositório contém uma Prova de Conceito focada em Callable e Future, duas abstrações essenciais de concorrência em Java. O objetivo é fornecer uma compreensão clara e prática de como tarefas assíncronas são executadas, como os resultados são obtidos e como os erros são tratados de forma controlada.
 
 Os exemplos são intencionalmente simples e escritos para fins de estudo, assemelhando-se bastante à forma como um desenvolvedor escreveria e raciocinaria sobre código concorrente em projetos reais.
