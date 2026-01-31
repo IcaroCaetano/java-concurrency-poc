@@ -7,6 +7,8 @@ public class CachedThreadPoolExample {
 
     public static void run() {
 
+        System.out.println("Iniciando com CachedThreadPoolExample");
+
         // Cria um pool de threads que cria novas threads conforme necessário
         ExecutorService executor = Executors.newCachedThreadPool();
 
@@ -19,5 +21,9 @@ public class CachedThreadPoolExample {
         }
 
         executor.shutdown();
+
+        System.out.println("Finaliza CachedThreadPoolExample");
+        System.out.println("********************************************************************");
+        System.out.println();
     }
 }
