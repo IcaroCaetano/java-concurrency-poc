@@ -2,6 +2,7 @@ package com.myprojecticaro.java_concurrency_poc;
 
 import com.myprojecticaro.java_concurrency_poc.callable.*;
 import com.myprojecticaro.java_concurrency_poc.executor.*;
+import com.myprojecticaro.java_concurrency_poc.threadpool.ThreadPoolExecutorExample;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import java.util.concurrent.ExecutionException;
@@ -209,6 +210,9 @@ public class JavaConcurrencyPocApplication {
 
         // Named Thread
         NamedThreadFactoryExample.run();
+
+        // Thread Pool
+        ThreadPoolExecutorExample.run();
 
     }
 
