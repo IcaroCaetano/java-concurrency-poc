@@ -14,11 +14,7 @@ public class CachedThreadPoolExample {
             int taskId = i;
 
             executor.execute(() -> {
-                System.out.println(
-                        "Task " + taskId +
-                        " executed by " +
-                        Thread.currentThread().getName()
-                );
+                System.out.println("Task " + taskId + " executed by " + Thread.currentThread().getName());
             });
         }
 

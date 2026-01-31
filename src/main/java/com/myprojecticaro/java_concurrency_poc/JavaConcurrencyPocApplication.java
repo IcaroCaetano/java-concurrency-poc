@@ -1,6 +1,7 @@
 package com.myprojecticaro.java_concurrency_poc;
 
 import com.myprojecticaro.java_concurrency_poc.callable.*;
+import com.myprojecticaro.java_concurrency_poc.executor.CachedThreadPoolExample;
 import com.myprojecticaro.java_concurrency_poc.executor.FixedThreadPoolExample;
 import com.myprojecticaro.java_concurrency_poc.executor.SimpleExecutorExample;
 import com.myprojecticaro.java_concurrency_poc.executor.SingleThreadExecutorExample;
@@ -203,6 +204,9 @@ public class JavaConcurrencyPocApplication {
 
         // Single Thread Executor
         SingleThreadExecutorExample.run();
+
+        // Cached Thread Executor
+        CachedThreadPoolExample.run();
     }
 
     private static void printState(Future<?> future) {
