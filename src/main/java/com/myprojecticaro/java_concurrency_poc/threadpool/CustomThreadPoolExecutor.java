@@ -24,6 +24,9 @@ public class CustomThreadPoolExecutor {
                 maxPoolSize,
                 keepAliveTime,
                 TimeUnit.SECONDS,
+                // Cria uma ArrayBlockingQueue com a capacidade (fixa) e a política de acesso padrão especificadas.
+                // ArrayBlockingQueue é uma fila bloqueante, limitada, baseada em array, usada para armazenar tarefas
+                // de forma thread-safe.
                 new ArrayBlockingQueue<>(queueCapacity),
                 new NamedThreadFactory("custom-pool"), // uso de fabrica de trhead
                 new CustomRejectedExecutionHandler()
