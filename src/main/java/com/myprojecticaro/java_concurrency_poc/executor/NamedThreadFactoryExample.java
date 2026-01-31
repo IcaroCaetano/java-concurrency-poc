@@ -7,6 +7,8 @@ public class NamedThreadFactoryExample {
 
     public static void run() {
 
+        System.out.println("Iniciando com NamedThreadFactoryExample");
+
         ExecutorService executor =
                 Executors.newFixedThreadPool(
                         2,
@@ -22,5 +24,9 @@ public class NamedThreadFactoryExample {
         }
 
         executor.shutdown();
+
+        System.out.println("Finaliza NamedThreadFactoryExample");
+        System.out.println("********************************************************************");
+        System.out.println();
     }
 }

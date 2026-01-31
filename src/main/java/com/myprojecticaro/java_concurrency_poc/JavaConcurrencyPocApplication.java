@@ -208,8 +208,8 @@ public class JavaConcurrencyPocApplication {
         // Shutdown Thread Executor
         ExecutorShutdownExample.run();
 
-        ExecutorService executorNamedThread =
-                Executors.newFixedThreadPool(2, new NamedThreadFactory("worker"));
+        // Named Thread
+        NamedThreadFactoryExample.run();
 
     }
 
