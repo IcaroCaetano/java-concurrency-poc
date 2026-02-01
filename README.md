@@ -133,7 +133,7 @@ ExecutorService executor = Executors.newFixedThreadPool(2);
 Future<String> future = executor.submit(callable);
 ````
 
-### ExecutorService Lifecycle
+#### ExecutorService Lifecycle
 
 ExecutorService must always be shut down explicitly.
 
