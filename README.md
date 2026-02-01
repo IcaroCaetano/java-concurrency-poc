@@ -194,6 +194,13 @@ This requires explicit handling when calling future.get().
 
 - Proper shutdown of ExecutorService
 
+#### Real-world Use Cases
+
+- Parallel calls to external services (HTTP, database, cache)
+- CPU-bound tasks such as data transformation
+- Controlled execution of background jobs
+- Legacy systems where reactive programming is not available
+
 #### Recommended Study Order
 
 1. Callable vs Runnable
