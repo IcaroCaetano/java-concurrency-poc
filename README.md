@@ -82,6 +82,19 @@ Callable is conceptually similar to Runnable, but with two important differences
 Because of this, Callable is preferred whenever the result of a task matters.
 
 
+### Why Callable Exists
+
+Before `Callable`, Java provided only `Runnable`, which:
+
+- Does not return a result
+- Cannot throw checked exceptions
+
+This makes `Runnable` unsuitable for tasks where:
+- The result of the computation matters
+- Failure must be explicitly handled
+
+`Callable` was introduced to solve exactly these limitations.
+
 ### Future
 
 #### What is Future?
