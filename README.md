@@ -116,6 +116,14 @@ V result = future.get();
 ````
 If the Callable throws an exception, it is wrapped inside an ExecutionException and rethrown by get().
 
+⚠️ Important:
+Calling `future.get()` is a **blocking operation**.
+
+If the task has not completed:
+- The calling thread is parked
+- CPU is not used, but the thread is blocked
+- This can become a scalability bottleneck if misused
+
 ### ExecutorService
 
 Callable tasks are not executed directly. Instead, they are submitted to an ExecutorService, which manages thread creation, reuse, and scheduling.
