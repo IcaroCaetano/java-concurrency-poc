@@ -132,6 +132,19 @@ Callable tasks are not executed directly. Instead, they are submitted to an Exec
 ExecutorService executor = Executors.newFixedThreadPool(2);
 Future<String> future = executor.submit(callable);
 ````
+
+### ExecutorService Lifecycle
+
+ExecutorService must always be shut down explicitly.
+
+Failing to do so may:
+- Prevent JVM shutdown
+- Leak threads
+- Consume native memory unnecessarily
+
+Always call:
+```java
+executor.shutdown();
 Using ExecutorService avoids manual thread management and is the recommended approach in production systems.
 
 ### Examples Included in This POC
