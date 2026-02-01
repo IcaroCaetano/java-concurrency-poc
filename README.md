@@ -143,8 +143,11 @@ Failing to do so may:
 - Consume native memory unnecessarily
 
 Always call:
+
 ```java
 executor.shutdown();
+```
+
 Using ExecutorService avoids manual thread management and is the recommended approach in production systems.
 
 ### Examples Included in This POC
