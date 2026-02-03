@@ -4,7 +4,10 @@ import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
-public class AbortPolicyExample {
+/**
+ * @author Icaro Caetano
+ */
+public class CallerRunsPolicyExample {
 
     public static void run() {
 
@@ -33,30 +36,32 @@ public class AbortPolicyExample {
          *     Lança exceção quando o pool e a fila estão cheios,
          *     falhando rapidamente em situações de sobrecarga.
          */
-        ThreadPoolExecutor executor = new ThreadPoolExecutor(1, 1,
-                        0,
-                        TimeUnit.SECONDS,
-                        new ArrayBlockingQueue<>(1),
-                        new ThreadPoolExecutor.AbortPolicy()
-        );
+        ThreadPoolExecutor executor =
+            new ThreadPoolExecutor(
+                1,
+                1,
+                0,
+                TimeUnit.SECONDS,
+                new ArrayBlockingQueue<>(1),
+                new ThreadPoolExecutor.CallerRunsPolicy()
+            );
 
         try {
-            submitTasks(executor);
+            //  3 tarefas
+            for (int i = 1; i <= 3; i++) {
+                int taskId = i;
+
+                System.out.println("Submitting task " + taskId +
+                        " from " + Thread.currentThread().getName());
+
+                executor.execute(() -> {
+                    System.out.println("Task " + taskId + " running on " +
+                        Thread.currentThread().getName());
+                    sleep(1000);
+                });
+            }
         } finally {
             executor.shutdown();
-        }
-    }
-
-    private static void submitTasks(ThreadPoolExecutor executor) {
-        for (int i = 1; i <= 3; i++) {
-            int taskId = i;
-
-            System.out.println("Submitting task " + taskId);
-
-            executor.execute(() -> {
-                sleep(1000);
-                System.out.println("Task " + taskId + " executed");
-            });
         }
     }
 
