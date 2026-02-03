@@ -30,9 +30,9 @@ Cada thread do pool:
 
 - Possui:
 
-- Sua própria pilha (memória nativa)
+  - Sua própria pilha (memória nativa)
 
-- Metadados internos
+  - Metadados internos
 
 Essa pilha não está localizada no heap, mas é contabilizada no consumo total de memória do processo.
 
