@@ -18,23 +18,23 @@ Os exemplos são intencionalmente simples e escritos para fins de estudo, asseme
 
 - Trabalhar com estado e dados compartilhados de forma segura
 
-## Structure - Where the thread pool lives
+## Estrutura - Onde reside o pool de threads
 
-Pool Threads
+Threads do Pool
 
-Each pool thread:
+Cada thread do pool:
 
-- Is an operating system thread
+- É uma thread do sistema operacional
 
-- Created within the JVM process
+- Criada dentro do processo da JVM
 
-- Has:
+- Possui:
 
-  - Its own stack (native memory)
+- Sua própria pilha (memória nativa)
 
-  - Internal metadata
+- Metadados internos
 
-This stack is not located on the heap, but it counts towards the total memory consumption of the process.
+Essa pilha não está localizada no heap, mas é contabilizada no consumo total de memória do processo.
 
 ````
 Processo JVM
