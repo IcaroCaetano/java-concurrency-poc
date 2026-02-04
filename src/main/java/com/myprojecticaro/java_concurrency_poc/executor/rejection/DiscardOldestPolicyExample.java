@@ -26,7 +26,7 @@ public class DiscardOldestPolicyExample {
         }
     }
 
-     /**
+    /**
      * Creates a ThreadPoolExecutor configured to demonstrate the
      * DiscardOldestPolicy rejection behavior.
      *

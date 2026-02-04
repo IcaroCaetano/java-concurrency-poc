@@ -2,6 +2,8 @@ package com.myprojecticaro.java_concurrency_poc;
 
 import com.myprojecticaro.java_concurrency_poc.callable.*;
 import com.myprojecticaro.java_concurrency_poc.executor.*;
+import com.myprojecticaro.java_concurrency_poc.executor.rejection.CallerRunsPolicyExample;
+import com.myprojecticaro.java_concurrency_poc.executor.rejection.DiscardOldestPolicyExample;
 import com.myprojecticaro.java_concurrency_poc.threadpool.ThreadPoolExecutorExample;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -213,6 +215,13 @@ public class JavaConcurrencyPocApplication {
 
         // Thread Pool
         ThreadPoolExecutorExample.run();
+
+
+        CallerRunsPolicyExample.run();
+
+        DiscardOldestPolicyExample.run();
+
+        DiscardOldestPolicyExample.run();
 
     }
 

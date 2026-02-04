@@ -11,40 +11,7 @@ public class CallerRunsPolicyExample {
 
     public static void run() {
 
-        /**
-         * Cria um ThreadPoolExecutor com capacidade extremamente limitada para
-         * demonstrar o comportamento de rejeição de tarefas.
-         *
-         *     corePoolSize = 1
-         *     <br>
-         *     Mantém apenas uma thread ativa no pool.
-         *
-         *     maximumPoolSize = 1
-         *     <br>
-         *     O pool não cresce além de uma thread, mesmo sob carga.
-         *
-         *     keepAliveTime = 0 segundos
-         *     <br>
-         *     Não há impacto prático, pois o core e o máximo são iguais.
-         *
-         *     ArrayBlockingQueue com capacidade 1
-         *     <br>
-         *     Permite apenas uma tarefa em espera na fila.
-         *
-         *     AbortPolicy
-         *     <br>
-         *     Lança exceção quando o pool e a fila estão cheios,
-         *     falhando rapidamente em situações de sobrecarga.
-         */
-        ThreadPoolExecutor executor =
-            new ThreadPoolExecutor(
-                1,
-                1,
-                0,
-                TimeUnit.SECONDS,
-                new ArrayBlockingQueue<>(1),
-                new ThreadPoolExecutor.CallerRunsPolicy()
-            );
+        ThreadPoolExecutor executor = createExecutor();
 
         try {
             //  3 tarefas
@@ -63,6 +30,25 @@ public class CallerRunsPolicyExample {
         } finally {
             executor.shutdown();
         }
+    }
+
+    /**
+     * Creates a ThreadPoolExecutor configured to demonstrate the
+     * DiscardOldestPolicy rejection behavior.
+     *
+     * The pool has a single worker thread and a queue with capacity 1.
+     * When both are full, the oldest queued task is discarded in favor
+     * of the newly submitted task.
+     */
+    private static ThreadPoolExecutor createExecutor() {
+        return new ThreadPoolExecutor(
+                1,   // corePoolSize = 1
+                1,              // maximumPoolSize = 1
+                0,              // keepAliveTime = 0 seconds
+                TimeUnit.SECONDS,
+                new ArrayBlockingQueue<>(1),
+                new ThreadPoolExecutor.DiscardOldestPolicy()
+        );
     }
 
     private static void sleep(long millis) {
