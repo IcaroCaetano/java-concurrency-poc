@@ -36,9 +36,9 @@ public class DiscardOldestPolicyExample {
      */
     private static ThreadPoolExecutor createExecutor() {
         return new ThreadPoolExecutor(
-            1,
-            1,
-            0,
+            1, // corePoolSize = 1
+            1, // maximumPoolSize = 1
+            0, // keepAliveTime = 0 seconds
             TimeUnit.SECONDS,
             new ArrayBlockingQueue<>(1),
             new ThreadPoolExecutor.DiscardOldestPolicy()
