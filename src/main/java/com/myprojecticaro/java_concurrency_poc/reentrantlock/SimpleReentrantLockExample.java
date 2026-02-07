@@ -5,6 +5,10 @@ import java.util.concurrent.locks.ReentrantLock;
 public class SimpleReentrantLockExample {
 
     public static void run() {
+
+        System.out.println();
+        System.out.println("Iniciando com SimpleReentrantLockExample");
+
         ReentrantLock lock = new ReentrantLock();
         SharedCounter counter = new SharedCounter(lock);
 
@@ -17,6 +21,10 @@ public class SimpleReentrantLockExample {
         t2.start();
 
         join(t1, t2);
+
+        System.out.println("Finaliza SimpleReentrantLockExample");
+        System.out.println("********************************************************************");
+        System.out.println();
     }
 
     private static void join(Thread... threads) {

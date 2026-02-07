@@ -220,7 +220,7 @@ public class JavaConcurrencyPocApplication {
         ThreadPoolExecutorExample.run();
 
         // AbortPolicyExample
-        AbortPolicyExample.run();
+        //AbortPolicyExample.run();
 
         // CallerRunsPolicyExample
         CallerRunsPolicyExample.run();
