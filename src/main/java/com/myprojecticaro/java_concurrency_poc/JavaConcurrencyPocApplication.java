@@ -7,6 +7,7 @@ import com.myprojecticaro.java_concurrency_poc.executor.rejection.CallerRunsPoli
 import com.myprojecticaro.java_concurrency_poc.executor.rejection.CustomRejectedExecutionHandlerExample;
 import com.myprojecticaro.java_concurrency_poc.executor.rejection.DiscardOldestPolicyExample;
 import com.myprojecticaro.java_concurrency_poc.reentrantlock.SimpleReentrantLockExample;
+import com.myprojecticaro.java_concurrency_poc.reentrantlock.TryLockExample;
 import com.myprojecticaro.java_concurrency_poc.threadpool.ThreadPoolExecutorExample;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -236,6 +237,7 @@ public class JavaConcurrencyPocApplication {
         System.out.println("ReentrantLock");
 
         SimpleReentrantLockExample.run();
+        TryLockExample.run();
 
     }
 

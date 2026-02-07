@@ -5,6 +5,9 @@ import java.util.concurrent.locks.ReentrantLock;
 public class TryLockExample {
 
     public static void run() {
+        System.out.println();
+        System.out.println("Iniciando com TryLockExample");
+
         ReentrantLock lock = new ReentrantLock();
 
         Runnable task = () -> {
@@ -24,6 +27,10 @@ public class TryLockExample {
 
         new Thread(task, "Thread-A").start();
         new Thread(task, "Thread-B").start();
+
+        System.out.println("Finaliza TryLockExample");
+        System.out.println("********************************************************************");
+        System.out.println();
     }
 
     private static void sleep(long millis) {
