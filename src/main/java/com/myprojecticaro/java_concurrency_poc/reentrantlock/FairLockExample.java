@@ -5,6 +5,9 @@ import java.util.concurrent.locks.ReentrantLock;
 public class FairLockExample {
 
     public static void run() {
+
+        System.out.println();
+        System.out.println("Iniciando com FairLockExample");
         ReentrantLock fairLock = new ReentrantLock(true);
 
         Runnable task = () -> {
@@ -20,6 +23,10 @@ public class FairLockExample {
         for (int i = 1; i <= 3; i++) {
             new Thread(task, "Thread-" + i).start();
         }
+
+        System.out.println("Finaliza FairLockExample");
+        System.out.println("********************************************************************");
+        System.out.println();
     }
 
     private static void sleep(long millis) {

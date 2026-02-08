@@ -6,6 +6,7 @@ import com.myprojecticaro.java_concurrency_poc.executor.rejection.AbortPolicyExa
 import com.myprojecticaro.java_concurrency_poc.executor.rejection.CallerRunsPolicyExample;
 import com.myprojecticaro.java_concurrency_poc.executor.rejection.CustomRejectedExecutionHandlerExample;
 import com.myprojecticaro.java_concurrency_poc.executor.rejection.DiscardOldestPolicyExample;
+import com.myprojecticaro.java_concurrency_poc.reentrantlock.FairLockExample;
 import com.myprojecticaro.java_concurrency_poc.reentrantlock.SimpleReentrantLockExample;
 import com.myprojecticaro.java_concurrency_poc.reentrantlock.TryLockExample;
 import com.myprojecticaro.java_concurrency_poc.threadpool.ThreadPoolExecutorExample;
@@ -238,6 +239,7 @@ public class JavaConcurrencyPocApplication {
 
         SimpleReentrantLockExample.run();
         TryLockExample.run();
+        FairLockExample.run();
 
     }
 
