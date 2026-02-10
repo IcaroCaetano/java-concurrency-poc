@@ -5,6 +5,9 @@ import java.util.concurrent.locks.ReentrantLock;
 public class LockInterruptiblyExample {
 
     public static void run() {
+        System.out.println();
+        System.out.println("Iniciando com LockInterruptiblyExample");
+
         ReentrantLock lock = new ReentrantLock();
 
 
@@ -29,6 +32,10 @@ public class LockInterruptiblyExample {
                 } finally {
                     lock.unlock();
                 }
+
+                System.out.println("Finaliza LockInterruptiblyExample");
+                System.out.println("********************************************************************");
+                System.out.println();
             } catch (InterruptedException e) {
                 System.out.println("Worker was interrupted while waiting for the lock");
                 Thread.currentThread().interrupt();
