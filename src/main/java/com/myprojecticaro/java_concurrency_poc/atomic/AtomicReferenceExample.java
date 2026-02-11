@@ -6,6 +6,9 @@ public class AtomicReferenceExample {
 
     public static void run() {
 
+        System.out.println();
+        System.out.println("Iniciando com AtomicReferenceExample");
+
         /**
          *Uma referência de objeto que pode ser atualizada atomicamente. Consulte a especificação VarHandle para
          * obter descrições das propriedades dos acessos atômicos.
@@ -22,5 +25,10 @@ public class AtomicReferenceExample {
         reference.updateAndGet(current -> current + " -> Updated");
 
         System.out.println("Value: " + reference.get());
+
+        System.out.println();
+        System.out.println("Finaliza AtomicBooleanExample");
+        System.out.println("********************************************************************");
+        System.out.println();
     }
 }
