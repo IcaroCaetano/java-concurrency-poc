@@ -8,6 +8,20 @@ public class CompareAndSetExample {
 
         AtomicInteger value = new AtomicInteger(10);
 
+        /**
+         * Porque evita esse problema clássico:
+         *
+         * if (value == 10) {
+         *     value = 20;
+         * }
+         *
+         *
+         * Entre o if e a atribuição, outra thread pode alterar o valor.
+         *
+         * compareAndSet resolve isso usando uma instrução de hardware chamada:
+         *
+         * CAS — Compare And Swap
+         */
         boolean updated = value.compareAndSet(10, 20);
 
         System.out.println("Updated: " + updated);
