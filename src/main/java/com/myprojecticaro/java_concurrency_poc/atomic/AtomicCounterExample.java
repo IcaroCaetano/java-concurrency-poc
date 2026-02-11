@@ -8,6 +8,9 @@ public class AtomicCounterExample {
 
     public static void run() {
 
+        System.out.println();
+        System.out.println("Iniciando com AtomicCounterExample");
+
         Runnable task = () -> {
             // 5 tarefas
             for (int i = 0; i < 5; i++) {
@@ -23,6 +26,10 @@ public class AtomicCounterExample {
         t2.start();
         
         join(t1, t2);
+
+        System.out.println("Finaliza AtomicCounterExample");
+        System.out.println("********************************************************************");
+        System.out.println();
     }
 
     private static void join(Thread... threads) {
