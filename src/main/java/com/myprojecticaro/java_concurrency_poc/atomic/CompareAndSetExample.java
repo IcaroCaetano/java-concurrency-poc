@@ -6,6 +6,9 @@ public class CompareAndSetExample {
 
     public static void run() {
 
+        System.out.println();
+        System.out.println("Iniciando com CompareAndSetExample");
+
         AtomicInteger value = new AtomicInteger(10);
 
         /**
@@ -26,6 +29,11 @@ public class CompareAndSetExample {
 
         System.out.println("Updated: " + updated);
         System.out.println("Current value: " + value.get());
+
+        System.out.println();
+        System.out.println("Finaliza CompareAndSetExample");
+        System.out.println("********************************************************************");
+        System.out.println();
     }
 }
 
