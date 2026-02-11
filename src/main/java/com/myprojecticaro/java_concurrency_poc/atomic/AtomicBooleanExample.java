@@ -4,6 +4,12 @@ import java.util.concurrent.atomic.AtomicBoolean;
 
 public class AtomicBooleanExample {
 
+    /**
+     * Um valor booleano que pode ser atualizado atomicamente. Consulte a especificação
+     * VarHandle para obter descrições das propriedades dos acessos atômicos.
+     * Um AtomicBoolean é usado em aplicações como flags atualizadas atomicamente e não
+     * pode ser usado como substituto para um Boolean.
+     */
     private static final AtomicBoolean running = new AtomicBoolean(true);
 
     public static void run() {
