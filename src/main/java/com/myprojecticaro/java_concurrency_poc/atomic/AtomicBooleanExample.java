@@ -17,6 +17,9 @@ public class AtomicBooleanExample {
 
     public static void run() {
 
+        System.out.println();
+        System.out.println("Iniciando com AtomicBooleanExample");
+
         Thread worker = new Thread(() -> {
             while (running.get()) {
                 System.out.println("Working...");
@@ -29,6 +32,10 @@ public class AtomicBooleanExample {
 
         sleep(1500);
         running.set(false);
+
+        System.out.println("Finaliza AtomicBooleanExample");
+        System.out.println("********************************************************************");
+        System.out.println();
     }
 
     private static void sleep(long millis) {
