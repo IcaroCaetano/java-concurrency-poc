@@ -1,4 +1,4 @@
-package java-concurrency-poc.src.main.java.com.myprojecticaro.java_concurrency_poc.reentrantlock;
+package com.myprojecticaro.java_concurrency_poc.reentrantlock;
 
 public class ConditionWithReentrantLockExample {
 
