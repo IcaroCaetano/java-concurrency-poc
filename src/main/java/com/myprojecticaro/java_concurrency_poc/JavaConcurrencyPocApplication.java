@@ -1,5 +1,6 @@
 package com.myprojecticaro.java_concurrency_poc;
 
+import com.myprojecticaro.java_concurrency_poc.atomic.*;
 import com.myprojecticaro.java_concurrency_poc.callable.*;
 import com.myprojecticaro.java_concurrency_poc.executor.*;
 import com.myprojecticaro.java_concurrency_poc.executor.rejection.AbortPolicyExample;
@@ -243,6 +244,13 @@ public class JavaConcurrencyPocApplication {
 		System.out.println("\n=== Condition with ReentrantLock ===");
         ConditionWithReentrantLockExample.run();
 
+
+        System.out.println("\n=== Atomic Variables ===");
+        AtomicCounterExample.run();
+        CompareAndSetExample.run();
+        AtomicBooleanExample.run();
+        AtomicReferenceExample.run();
+        AtomicLongAccumulatorExample.run();
 
     }
 
