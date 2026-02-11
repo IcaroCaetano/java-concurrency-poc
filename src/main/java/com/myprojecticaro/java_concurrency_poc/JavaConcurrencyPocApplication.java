@@ -243,6 +243,10 @@ public class JavaConcurrencyPocApplication {
         FairLockExample.run();
         LockInterruptiblyExample.run();
 
+		System.out.println("\n=== Condition with ReentrantLock ===");
+        ConditionWithReentrantLockExample.run();
+
+
     }
 
     private static void printState(Future<?> future) {
