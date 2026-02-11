@@ -21,14 +21,15 @@ public class AtomicCounterExample {
 
         t1.start();
         t2.start();
-
+        
         join(t1, t2);
     }
 
     private static void join(Thread... threads) {
         for (Thread t : threads) {
             try {
-               // 
+               // A thread que chamou join() fica bloqueada
+               // Ela só continua quando a outra thread finaliza 
                 t.join();
             } catch (InterruptedException e) {
                 Thread.currentThread().interrupt();
