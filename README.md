@@ -7,7 +7,7 @@ This repository contains a Proof of Concept focused on Callable and Future, two 
 
 The examples are intentionally simple and written for study purposes, closely resembling how a developer would write and reason about concurrent code in real projects.
 
-## Objectives
+### Objectives
 
 - Understand the difference between Runnable and Callable
 
